@@ -14,7 +14,7 @@ Role to run Consul in container, as single instance or in cluster mode.
 
 ```
 - name: agrrh.consul
-  version: 1.0.1
+  version: master  # Better place latest tag here
 ```
 
 ## Playbook
