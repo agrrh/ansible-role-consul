@@ -14,7 +14,6 @@ Role to run Consul in container, as single instance or in cluster mode.
 
 ```
 - name: agrrh.consul
-  src: https://github.com/agrrh/ansible-role-consul
   version: 1.0.1
 ```
 
