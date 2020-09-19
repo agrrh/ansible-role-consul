@@ -1,6 +1,8 @@
 ---
 
 galaxy_info:
+  role_name: consul
+
   author: agrrh
   description: Role to set up Consul
 
