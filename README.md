@@ -1,6 +1,6 @@
 # Info
 
-Role to run Consul in container. As single instance or in cluster mode.
+Role to run Consul in container, as single instance or in cluster mode.
 
 # Requirements
 
