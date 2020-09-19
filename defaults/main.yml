@@ -26,8 +26,7 @@ consul_client_addr: 0.0.0.0
 # Advertise PRIVATE address
 # WARNING `false` will fail when multiple private IPs exists
 consul_advertise_addr: false
-# More reliable way, change filter to desired subnet (e.g. "10.0.99.0/24")
-#consul_advertise_addr: "{{ ansible_all_ipv4_addresses | ipaddr("private") | first }}"
+#consul_advertise_addr: "{{ ansible_all_ipv4_addresses | ipv4 | ipaddr('10.0.0.0/24') | first }}"
 
 # Advertise PUBLIC address
 consul_advertise_addr_wan: false
