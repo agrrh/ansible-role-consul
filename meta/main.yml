@@ -1,0 +1,21 @@
+---
+
+galaxy_info:
+  author: agrrh
+  description: Role to set up Consul
+
+  license: WTFPL
+
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+
+  galaxy_tags:
+    - agrrh
+    - hashicorp
+    - consul
+
+dependencies: []

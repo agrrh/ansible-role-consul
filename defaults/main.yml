@@ -1,0 +1,53 @@
+---
+
+# Consul version to use
+consul_version: 1.7.3
+
+# Random string to encrypt data, should be same for all nodes in cluster
+# consul keygen: JwXHgO31el2W4+uG8nNhPw==
+consul_encrypt_string: CHANGEME
+
+# Parameters
+consul_name: "{{ inventory_hostname }}"
+consul_dc: mydc
+consul_domain: consul
+
+consul_server: false
+
+consul_ui_content_path: /ui/
+
+consul_data_path: /var/lib/consul
+consul_log_level: WARN
+
+# Addresses / binds
+consul_bind_addr: 0.0.0.0
+consul_client_addr: 0.0.0.0
+
+# Advertise PRIVATE address
+# WARNING `false` will fail when multiple private IPs exists
+consul_advertise_addr: false
+# More reliable way, change filter to desired subnet (e.g. "10.0.99.0/24")
+#consul_advertise_addr: "{{ ansible_all_ipv4_addresses | ipaddr("private") | first }}"
+
+# Advertise PUBLIC address
+consul_advertise_addr_wan: false
+
+# Setup type:
+#   Cluster       List of IPs / hostnames
+#   Single node   One record with FQDN of this server
+#   Agent         Just make sure agent host not in this list
+consul_cluster: []
+
+# One of servers should be able to initialize cluster
+# WARNING Do not forget to disable after cluster has been initialized
+consul_bootstrap: "{{ consul_cluster | length }}"
+
+# Specify any of your WAN cluster nodes here if you'd like to make a federation
+consul_cluster_wan: []
+# E.g. you'd like to specify your main consul cluster for projects/segments to connect
+#  - consul-central.example.org
+
+# Specify main node address if default IP is not available from other nodes
+#consul_cluster_join_addr: 10.0.0.1
+
+consul_container_labels: {}
